@@ -7,6 +7,8 @@ Platforms/SurfaceDuoPkg/Include/Resources/ReleaseInfo.h
 .vscode
 
 /Build/
+boot.img
+uefi_image
 .DS_Store
 *_extdep/
 *.pyc

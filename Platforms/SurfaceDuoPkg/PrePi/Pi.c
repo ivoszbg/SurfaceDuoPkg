@@ -82,7 +82,7 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN UINT64 StartTimeStamp)
        UefiMemoryBase, UefiMemorySize, StackBase, StackSize));
 
   DEBUG((EFI_D_INFO | EFI_D_LOAD, "Disabling Qualcomm Watchdog Reboot timer\n"));
-  MmioWrite32(0x17C10008, 0x00000000);
+  MmioWrite32(0x17817008, 0x00000000);
   DEBUG((EFI_D_INFO | EFI_D_LOAD, "Qualcomm Watchdog Reboot timer disabled\n"));
 
   // Set up HOB

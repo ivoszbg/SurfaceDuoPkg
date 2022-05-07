@@ -52,7 +52,7 @@
   gArmTokenSpaceGuid.PcdArmArchTimerSecIntrNum|17
   gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|18
   gArmTokenSpaceGuid.PcdGicDistributorBase|0x17a00000
-  gArmTokenSpaceGuid.PcdGicRedistributorsBase|0x17a60000
+  gArmTokenSpaceGuid.PcdGicRedistributorsBase|0x17b00000
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"DuoWoA authors"
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"2.23"
@@ -256,19 +256,8 @@
 !endif
 
   # Platform Drivers
-!if $(USE_SCREEN_FOR_SERIAL_OUTPUT) == 1
-!if $(USE_MEMORY_FOR_SERIAL_OUTPUT) == 1
-  SerialPortLib|SurfaceDuoPkg/Library/FrameBufferInMemorySerialPortLib/FrameBufferInMemorySerialPortLib.inf
-!else
   SerialPortLib|SurfaceDuoPkg/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
-!endif
-!else
-!if $(USE_MEMORY_FOR_SERIAL_OUTPUT) == 1
-  SerialPortLib|SurfaceDuoPkg/Library/InMemorySerialPortLib/InMemorySerialPortLib.inf
-!else
   SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
-!endif
-!endif
   
   MemoryInitPeiLib|SurfaceDuoPkg/Library/MemoryInitPeiLib/PeiMemoryAllocationLib.inf
   PlatformPeiLib|SurfaceDuoPkg/Library/PlatformPeiLib/PlatformPeiLib.inf

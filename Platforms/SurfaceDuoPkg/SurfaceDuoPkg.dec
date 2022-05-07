@@ -109,9 +109,9 @@
 
 [PcdsFixedAtBuild.common]
   # Simple FrameBuffer
-  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x80600000|UINT32|0x0000a400
-  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1350|UINT32|0x0000a401
-  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1800|UINT32|0x0000a402
+  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9D400000|UINT32|0x0000a400
+  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080|UINT32|0x0000a401
+  gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2280|UINT32|0x0000a402
   gSurfaceDuoPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
 
   # FD

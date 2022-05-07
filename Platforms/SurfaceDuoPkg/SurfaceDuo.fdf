@@ -147,9 +147,9 @@ READ_LOCK_STATUS   = TRUE
   # DT
   INF EmbeddedPkg/Drivers/DtPlatformDxe/DtPlatformDxe.inf
 
-  FILE FREEFORM = 25462CDA-221F-47DF-AC1D-259CFAA4E326 {
-    SECTION RAW = SurfaceDuoPkg/FdtBlob/sm8150-microsoft-surface-duo.dtb
-  }
+  #FILE FREEFORM = 25462CDA-221F-47DF-AC1D-259CFAA4E326 {
+  #  SECTION RAW = SurfaceDuoPkg/FdtBlob/sm8150-microsoft-surface-duo.dtb
+  #}
 
   !include SurfaceDuoPkg/FrontpageFdf.inc
 
