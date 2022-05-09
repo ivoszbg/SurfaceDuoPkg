@@ -62,7 +62,7 @@ be found at http://opensource.org/licenses/bsd-license.php
 /* Build-time generated ReleaseInfo.h will override the default one */
 #include <Resources/ReleaseStampStub.h>
 // Must come in order
-/* #include <Resources/ReleaseInfo.h> */
+#include <Resources/ReleaseInfo.h>
 
 /* Protocol reference */
 EFI_CHIPINFO_PROTOCOL *mBoardProtocol = NULL;
