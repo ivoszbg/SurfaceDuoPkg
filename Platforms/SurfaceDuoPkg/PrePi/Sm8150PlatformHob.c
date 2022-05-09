@@ -100,8 +100,23 @@ CfgGetCfgInfoVal(CHAR8 *Key, UINT32 *Value)
     return EFI_SUCCESS;
   }
 
+  if (AsciiStriCmp(Key, "MemoryCaptureModeOffset") == 0) {
+    *Value = 0x1C;
+    return EFI_SUCCESS;
+  }
+
+  if (AsciiStriCmp(Key, "AbnormalResetOccurredOffset") == 0) {
+    *Value = 0x24;
+    return EFI_SUCCESS;
+  }
+
+  if (AsciiStriCmp(Key, "DBIDumpDDRBase") == 0) {
+    *Value = 0x9FFD0000;
+    return EFI_SUCCESS;
+  }
+
   if (AsciiStriCmp(Key, "NumCpus") == 0) {
-    *Value = 8;
+    *Value = 4;
     return EFI_SUCCESS;
   }
 
@@ -160,13 +175,18 @@ CfgGetCfgInfoVal(CHAR8 *Key, UINT32 *Value)
     return EFI_SUCCESS;
   }
 
-  if (AsciiStriCmp(Key, "EnableUfsIOC") == 0) {
-    *Value = 0;
+  if (AsciiStriCmp(Key, "PSHoldOffset") == 0) {
+    *Value = 0xC000;
     return EFI_SUCCESS;
   }
 
-  if (AsciiStriCmp(Key, "UfsSmmuConfigForOtherBootDev") == 0) {
-    *Value = 1;
+  if (AsciiStriCmp(Key, "PSHoldSHFT") == 0) {
+    *Value = 0x0;
+    return EFI_SUCCESS;
+  }
+
+  if (AsciiStriCmp(Key, "GCCResetValueAddress") == 0) {
+    *Value = 0x146BF028;
     return EFI_SUCCESS;
   }
 
@@ -176,7 +196,7 @@ CfgGetCfgInfoVal(CHAR8 *Key, UINT32 *Value)
   }
 
   if (AsciiStriCmp(Key, "TzAppsRegnAddr") == 0) {
-    *Value = 0x87900000;
+    *Value = 0x86D00000;
     return EFI_SUCCESS;
   }
 
@@ -190,38 +210,8 @@ CfgGetCfgInfoVal(CHAR8 *Key, UINT32 *Value)
     return EFI_SUCCESS;
   }
 
-  if (AsciiStriCmp(Key, "ShmBridgememSize") == 0) {
-    *Value = 0xA00000;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "EnableMultiThreading") == 0) {
-    *Value = 0;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "MaxCoreCnt") == 0) {
-    *Value = 8;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "EarlyInitCoreCnt") == 0) {
-    *Value = 1;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "EnableDisplayThread") == 0) {
-    *Value = 0;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "EnableUefiSecAppDebugLogDump") == 0) {
-    *Value = 0;
-    return EFI_SUCCESS;
-  }
-
-  if (AsciiStriCmp(Key, "AllowNonPersistentVarsInRetail") == 0) {
-    *Value = 1;
+  if (AsciiStriCmp(Key, "EnableSecurityHoleForSplashPartition") == 0) {
+    *Value = 0x1;
     return EFI_SUCCESS;
   }
 

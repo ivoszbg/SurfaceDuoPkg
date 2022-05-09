@@ -75,6 +75,24 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN UINT64 StartTimeStamp)
   UefiMemorySize = FixedPcdGet32(PcdUefiMemPoolSize);
   StackBase      = (VOID *)(UefiMemoryBase + UefiMemorySize - StackSize);
 
+  // Clear current screen.
+  // TODO: Do it in a cleaner and quicker way
+  char *Pixels  = (void *)0x9D400000ull;
+  UINTN BgColor = 0xff000000;
+
+  // Set to black color.
+  for (UINTN i = 0; i < 1080; i++) {
+    for (UINTN j = 0; j < 2280; j++) {
+      BgColor = 0xff000000;
+      // Set pixel bit
+      for (UINTN p = 0; p < (32 / 8); p++) {
+        *Pixels = (unsigned char)BgColor;
+        BgColor = BgColor >> 8;
+        Pixels++;
+      }
+    }
+  }
+	
   DEBUG(
       (EFI_D_INFO | EFI_D_LOAD,
        "UEFI Memory Base = 0x%llx, Size = 0x%llx, Stack Base = 0x%llx, Stack "
