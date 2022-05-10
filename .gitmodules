@@ -20,4 +20,4 @@
 	branch = release/202111
 [submodule "Platforms/SurfaceDuoPkg/FirmwareBinaries"]
 	path = Platforms/SurfaceDuoPkg/FirmwareBinaries
-	url = https://github.com/WOA-Project/SurfaceDuoBinaries.git
+	url = https://github.com/ivoszbg/NokiaX6Binaries.git
